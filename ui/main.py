@@ -23,25 +23,25 @@ def main():
 
     with st.form(key="recommendation_form"):
         states = get_states()
-        state = st.selectbox("Select State", states)
+        state = st.selectbox("Select State", states, index=9)
 
         #TODO: want to implement a real-time listener
         crops = get_crops(state)
-        crop = st.selectbox("Select Crop", crops)
+        crop = st.selectbox("Select Crop", crops, index=919)
 
         soil_options = get_soil_types()
         soil = st.selectbox("Select Soil Type", soil_options)
 
-        area = st.number_input("Area (sq meters)", min_value=0)
-        total_days = st.number_input("Total Days", min_value=1)
+        area = st.number_input("Area (sq meters)", min_value=0, value=150)
+        total_days = st.number_input("Total Days", min_value=1, value=100)
         sowing_date = st.date_input("Sowing Date")
 
         st.markdown("---")
         st.subheader("Soil Nutrient Content")
 
-        n = st.number_input("Nitrogen (N) kg/ha")
-        p = st.number_input("Phosphorous (P) kg/ha")
-        k = st.number_input("Potassium (K) kg/ha")
+        n = st.number_input("Nitrogen (N) kg/ha", value=100)
+        p = st.number_input("Phosphorous (P) kg/ha", value=100)
+        k = st.number_input("Potassium (K) kg/ha", value=100)
 
         st.markdown("---")
         st.subheader("Location")
