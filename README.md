@@ -3,7 +3,7 @@
 Nothing interesting, just a last minute work for the sake of `Core Course Project-II`.
 
 
-## Commands
+## Command's
 
 To run the Server, use the command:
 ```bash
@@ -22,7 +22,7 @@ streamlit run main.py
 - Application : [http://localhost:8501/](http://localhost:8501/)
 
 
-## Pic's
+## Picture's
 
 Fucking shit of the UI!
 
