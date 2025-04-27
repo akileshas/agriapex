@@ -5,10 +5,10 @@ import pandas as pd
 from fastapi import APIRouter
 
 
-router = APIRouter()
+routes = APIRouter()
 
 
-@router.get("/get_crops")
+@routes.get("/get_crops")
 def get_crops():
     file_path = os.path.join(
         os.path.dirname(__file__),
@@ -23,7 +23,7 @@ def get_crops():
     return res
 
 
-@router.get("/get_states")
+@routes.get("/get_states")
 def get_states():
     file_path = os.path.join(
         os.path.dirname(__file__),
