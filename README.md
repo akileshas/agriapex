@@ -7,19 +7,19 @@ Nothing interesting, just a last minute work for Core Course Project-II.
 
 To run the Server, use the command:
 ```bash
-    uvicorn server:app --reload
+uvicorn server:app --reload
 ```
 
 To run the Application, use the command:
 ```bash
-    streamlit run main.py
+streamlit run main.py
 ```
 
 
 ## Endpoint's and Port's
 
-- Server Docs : [Server](http://127.0.0.1:8000/docs#/)
-- Application : [Application](http://localhost:8501/)
+- Server Docs : [http://127.0.0.1:8000/docs#/](http://127.0.0.1:8000/docs#/)
+- Application : [http://localhost:8501/](http://localhost:8501/)
 
 
 ## Pics
