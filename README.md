@@ -1,6 +1,6 @@
 # 🌾 Agri Apex
 
-Nothing interesting, just a last minute work for Core Course Project-II.
+Nothing interesting, just a last minute work for the sake of `Core Course Project-II`.
 
 
 ## Commands
