@@ -22,11 +22,11 @@ streamlit run main.py
 - Application : [http://localhost:8501/](http://localhost:8501/)
 
 
-## Pics
+## Pic's
 
 Fucking shit of the UI!
 
-- ### List of available API's
+- ### List of API's
 ![API](./asserts/api.jpg)
 
 - ### UI Structure
