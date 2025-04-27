@@ -7,15 +7,6 @@ url = "https://api.open-meteo.com/v1/forecast"
 
 
 def interpret_weather_data_hourly(api_data):
-    """
-    Interprets weather data from an API response and returns a structured dictionary with units.
-
-    Args:
-        api_data (dict): The API data in JSON format.
-
-    Returns:
-        list[dict]: A list of dictionaries, each containing weather details for a specific time.
-    """
     weather_details = []
 
     # Extract hourly data
@@ -90,15 +81,6 @@ def getWeatherHourly(latitude, longitude, date=None):
 
 
 def interpret_daily_weather_data(api_data):
-    """
-    Interprets daily aggregated weather data from an API response and returns structured data with units.
-
-    Args:
-        api_data (dict): The API data in JSON format.
-
-    Returns:
-        list[dict]: A list of dictionaries, each containing daily aggregated weather details with units.
-    """
     weather_details = []
 
     # Extract hourly data

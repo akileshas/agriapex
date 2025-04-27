@@ -20,19 +20,6 @@ model.load_weights(model_path)
 
 
 def generateInputTensor(state_id: str, crop_id: str, rows: int = 32, cols: int = 512):
-    """
-    Generates a tensor of shape (rows, cols) with numeric representations of stateId and cropId
-    embedded within random values.
-
-    Args:
-        state_id (str): The state ID in string format (e.g., a hex string).
-        crop_id (str): The crop ID in string format (e.g., a hex string).
-        rows (int): Number of rows in the output tensor.
-        cols (int): Number of columns in the output tensor.
-
-    Returns:
-        torch.Tensor: A tensor of shape (rows, cols) with state_id and crop_id embedded.
-    """
     state_num = int(state_id, 16)
     crop_num = int(crop_id, 16)
 
@@ -48,14 +35,6 @@ def generateInputTensor(state_id: str, crop_id: str, rows: int = 32, cols: int =
 
 
 def calculateValue(minThreshold, maxThreshold, minValue, maxValue, currentIndex):
-    '''
-    minThreshold -> x1
-    maxThreshold -> x2
-    minValue -> y1
-    maxValue -> y2
-    currentIndex -> x
-    y = (y2 - y1) / (x2 - x1) * (x - x1) + y1
-    '''
     minThreshold = float(minThreshold)
     maxThreshold = float(maxThreshold)
     minValue = float(minValue)

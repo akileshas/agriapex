@@ -1,12 +1,6 @@
-from typing import Any, Dict, List, Tuple, Union
-
 import os
-import numpy as np
-import pandas as pd
 import torch
 import torch.nn as nn
-import torch.nn.functional as F
-import torch.nn.init as init
 
 
 class MINN(nn.Module):
@@ -17,16 +11,6 @@ class MINN(nn.Module):
     def __init__(
         self, input_dim, output_dim, hidden_dim=512, num_heads=8, num_layers=6
     ) -> None:
-        """
-        Initializes the MINN model.
-
-        Args:
-            input_dim (int): The number of input features.
-            output_dim (int): The number of output features.
-            hidden_dim (int): The number of hidden units.
-            num_heads (int): The number of attention heads.
-            num_layers (int): The number of layers.
-        """
         super(MINN, self).__init__()
         self.input_dim = input_dim
         self.hidden_dim = hidden_dim
@@ -36,14 +20,7 @@ class MINN(nn.Module):
 
         # Define a self-attention block
         class MultiHeadSelfAttention(nn.Module):
-            """
-            Represents a multi-head self-attention block.
-            """
-
             def __init__(self, embed_dim, num_heads):
-                """
-                Initializes the multi-head self-attention block.
-                """
                 super(MultiHeadSelfAttention, self).__init__()
                 self.attention = nn.MultiheadAttention(
                     embed_dim, num_heads, batch_first=True
@@ -52,9 +29,6 @@ class MINN(nn.Module):
                 self.norm = nn.LayerNorm(embed_dim)
 
             def forward(self, x):
-                """
-                Defines the forward pass of the multi-head self-attention block.
-                """
                 attn_output, _ = self.attention(x, x, x)
                 x = x + attn_output
                 x = self.norm(x)
@@ -62,14 +36,7 @@ class MINN(nn.Module):
 
         # Define the DenseBlock
         class DenseBlock(nn.Module):
-            """
-            Represents a dense block.
-            """
-
             def __init__(self, in_features, growth_rate, num_layers):
-                """
-                Initializes the dense block.
-                """
                 super(DenseBlock, self).__init__()
                 self.layers = nn.ModuleList()
                 self.growth_rate = growth_rate
@@ -84,9 +51,6 @@ class MINN(nn.Module):
                     self.layers.append(layer)
 
             def forward(self, x):
-                """
-                Defines the forward pass of the dense block.
-                """
                 outputs = [x]
                 for layer in self.layers:
                     concatenated = torch.cat(outputs, dim=1)
@@ -113,17 +77,11 @@ class MINN(nn.Module):
         self.loaded_weights = False
 
     def load_weights(self, path) -> None:
-        """
-        Loads the weights into the model.
-        """
         if not os.path.exists(path):
             return "Model file not found"
         self.loaded_weights = torch.load(path, weights_only=True)
 
     def forward(self, x):
-        """
-        Defines the forward pass of the MINN model.
-        """
         x = self.self_attention(x.unsqueeze(1))
         x = x.squeeze(1)
         x = self.dense_block(x)
