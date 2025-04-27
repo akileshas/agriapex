@@ -1,8 +1,8 @@
 import os
 import json
-import utils
-import pandas as pd
+
 from fastapi import APIRouter
+from utils.data import get_state_id
 
 
 routes = APIRouter()
@@ -35,4 +35,22 @@ def get_states():
         data: dict = json.load(file)
 
     res = list(data.values())
+    return res
+
+
+@routes.get("/get_crops_for_state")
+def get_crops_for_state(state_name: str):
+    file_path = os.path.join(
+        os.path.dirname(__file__),
+        "../data/state_crop_ids.json"
+    )
+    file_path = os.path.abspath(file_path)
+
+    with open(file_path, "r") as file:
+        data: dict = json.load(file)
+
+    state_id = get_state_id(state_name)["state_id"]
+    state_crops = data.get(state_id, [])
+
+    res = list(state_crops.values())
     return res
