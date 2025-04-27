@@ -7,7 +7,7 @@ sys.path.append(os.path.join(os.path.dirname(__file__), "../"))
 sys.path.append(os.path.join(os.path.dirname(__file__), "../../"))
 
 from dotenv import load_dotenv
-from .prompts import (
+from utils.prompts import (
     splitter_prompt,
     scheduler_prompt,
 )
@@ -49,6 +49,7 @@ def getSplit(crop_name, total_days):
     # print(repr(res[first + 7 : last].strip()))
     json_str = json.loads(res[first + 7 : last].strip())
     return json_str
+
 
 if __name__ == "__main__":
     print(getSplit("Paddy", 140))

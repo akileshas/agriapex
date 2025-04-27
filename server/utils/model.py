@@ -48,7 +48,6 @@ def calculateValue(minThreshold, maxThreshold, minValue, maxValue, currentIndex)
     return round((maxValue - minValue) / (maxThreshold - minThreshold) * (currentIndex - minThreshold) + minValue, 2)
 
 
-
 def getRecommendations(stateId: str, cropId: str, N: int , P: int, K: int):
     global model
     input_tensor = generateInputTensor(stateId, cropId)
@@ -90,6 +89,7 @@ def getRecommendations(stateId: str, cropId: str, N: int , P: int, K: int):
         "DAP": DAP,
         "MOP": MOP
     }
+
 
 if __name__ == "__main__":
     stateId = "63f9ce47519359b7438e76fa"
