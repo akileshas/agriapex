@@ -6,7 +6,10 @@ sys.path.append(os.path.join(os.path.dirname(__file__), "../"))
 sys.path.append(os.path.join(os.path.dirname(__file__), "../../"))
 
 from fastapi import APIRouter
-from utils.data import get_state_id
+from utils.data import (
+    get_state_id,
+    get_crop_id,
+)
 
 
 routes = APIRouter()
@@ -57,4 +60,16 @@ def get_crops_for_state(state_name: str):
     state_crops = data.get(state_id, [])
 
     res = list(state_crops.values())
+    return res
+
+
+@routes.get("/get_state_id")
+def get_state_id_route(state_name: str):
+    res = get_state_id(state_name)
+    return res
+
+
+@routes.get("/get_crop_id")
+def get_crop_id_route(crop_name: str):
+    res = get_crop_id(crop_name)
     return res
