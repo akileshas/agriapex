@@ -26,8 +26,8 @@ streamlit run main.py
 
 Fucking shit of the UI!
 
-### List of available API's
+- ### List of available API's
 ![API](./asserts/api.jpg)
 
-### UI Structure
+- ### UI Structure
 ![UI](./asserts/ui.jpg)
