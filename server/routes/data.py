@@ -26,7 +26,9 @@ def get_crops():
     with open(file_path, "r") as file:
         data: dict = json.load(file)
 
-    res = list(data.values())
+    res = {
+        "crops": list(data.values())
+    }
     return res
 
 
@@ -41,7 +43,9 @@ def get_states():
     with open(file_path, "r") as file:
         data: dict = json.load(file)
 
-    res = list(data.values())
+    res = {
+        "states": list(data.values())
+    }
     return res
 
 
@@ -59,7 +63,9 @@ def get_crops_for_state(state_name: str):
     state_id = get_state_id(state_name)["state_id"]
     state_crops = data.get(state_id, [])
 
-    res = list(state_crops.values())
+    res = {
+        "crops": list(state_crops.values())
+    }
     return res
 
 
