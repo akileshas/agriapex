@@ -94,7 +94,7 @@ rich @ file:///croot/rich_1732638981168/work
 rpds-py==0.24.0
 ruamel.yaml @ file:///croot/ruamel.yaml_1727980156079/work
 ruamel.yaml.clib @ file:///croot/ruamel.yaml.clib_1727769819935/work
-setuptools==75.8.0
+setuptools==78.1.1
 simple-websocket==1.1.0
 six==1.17.0
 smmap==5.0.2
